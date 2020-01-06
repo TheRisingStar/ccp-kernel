@@ -420,7 +420,7 @@ static int __init tcp_ccp_register(void) {
 /*conn->index should be initialized to zero,because zero means this resource is not used!
 if not initialize it to  0,we will randomly get  the bug "[ccp] ccp_connection not initialized"*/
 //folowing 4 line code added by ZhuJiaHua to fix the bug "[ccp] ccp_connection not initialized"!
-//better way to use memset() function to initialize!
+//better way to use memset() function to initialize! 
 	for (sid = 0; sid < kernel_datapath->max_connections; sid++) {
 	conn = & kernel_datapath->ccp_active_connections[sid];
 	conn->index=0;
